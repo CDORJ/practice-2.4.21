@@ -16,7 +16,7 @@ export const getSmurfs = () => (dispatch) => {
         type: GOT_SMURFS,
         payload: res.data,
       });
-    }) 
+    })
     .catch((err) => {
       dispatch({
         type: NO_SMURFS,
@@ -29,6 +29,6 @@ export const getSmurfs = () => (dispatch) => {
 export const addSmurf = (newSmurf) => (dispatch) => {
   axios.post(website, newSmurf).then((res) => {
     console.log("response from post api: ", res);
-    // dispatch({type: ADD_SMURF, })
+    dispatch({ type: ADD_SMURF, payload: newSmurf });
   });
 };

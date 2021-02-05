@@ -1,6 +1,4 @@
-import axios from "axios";
-import { website } from "../actions";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { getSmurfs } from "../actions";
 
@@ -8,7 +6,7 @@ const SmurfComponent = (props) => {
   return (
     <div>
       {props.smurfs.map((smurf) => (
-        <div class="card">
+        <div className="card" key={smurf.id}>
           <h3>{smurf.name}</h3>
           <p>{smurf.age}</p>
         </div>
@@ -18,7 +16,6 @@ const SmurfComponent = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     smurfs: state.smurfsReducer.smurfs,
     isLoading: state.smurfsReducer.isLoading,
