@@ -28,7 +28,6 @@ export const getSmurfs = () => (dispatch) => {
 
 export const addSmurf = (newSmurf) => (dispatch) => {
   axios.post(website, newSmurf).then((res) => {
-    console.log("response from post api: ", res);
     dispatch({ type: ADD_SMURF, payload: newSmurf });
   });
 };

@@ -26,7 +26,7 @@ class App extends Component {
       .catch((err) => {
         store.dispatch({
           type: NO_SMURFS,
-          payload: err.data,
+          payload: err.message,
         });
       });
   }
